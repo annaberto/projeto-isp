@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feminicídios</title>
+</head>
+
+<body>
+  <h1>Injúria racial e preconceito</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Ano</th>
+        <th>Mês</th>
+        <th>Titulo</th>
+        <th>Sexo</th>
+        <th>Cor</th>
+        <th>Idade</th>
+        <th>Vitimas</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for injuria in injurias %}
+      <tr>
+        <td>{{ injuria.ano }}</td>
+        <td>{{ injuria.mes }}</td>
+        <td>{{ injuria.titulo }}</td>
+        <td>{{ injuria.sexo }}</td>
+        <td>{{ injuria.cor }}</td>
+        <td>{{ injuria.idade }}</td>
+        <td>{{ injuria.vitimas }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+
+</html>
