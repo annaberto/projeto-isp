@@ -16,7 +16,11 @@ class RegistroIncidente(models.Model):
 
     mes = models.IntegerField()
 
-    titulo = models.CharField(max_length=255)
+    titulo_choices = [
+      ("Preconceito de Raça ou de Cor", "Preconceito de Raça ou de Cor"),
+      ("Injúria por preconceito", "Injúria por preconceito")
+    ]
+    titulo = models.CharField(max_length=255, choices=titulo_choices)
 
     sexo_choices = [
         ('Feminino', 'Feminino'),

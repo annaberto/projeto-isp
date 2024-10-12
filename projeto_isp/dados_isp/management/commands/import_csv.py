@@ -1,6 +1,6 @@
-import pandas as pd
 from django.core.management.base import BaseCommand
-from dados_isp.models import RegistroIncidente 
+from dados_isp.models import RegistroIncidente
+import pandas as pd
 
 class Command(BaseCommand):
     help = 'Importa dados de um arquivo CSV para o banco de dados'
@@ -10,16 +10,20 @@ class Command(BaseCommand):
 
         df = pd.read_csv(file_path, sep=';', encoding='iso-8859-1')
 
-        for index, row in df.iterrows():
-            RegistroIncidente.objects.create(
-                cisp=row['Cisp'],                          
-                ano=row['Ano'],                            
-                mes=row['Mês'],                            
-                titulo=row['Titulo'],                      
-                sexo=row['Sexo'],                          
-                cor=row['Cor'],                            
-                idade=row['Idade'],                        
-                vitimas=row['Vítimas']                     
+        registros = [
+            RegistroIncidente(
+                cisp=row['Cisp'],
+                ano=row['Ano'],
+                mes=row['Mês'],
+                titulo=row['Titulo'],
+                sexo=row['Sexo'],
+                cor=row['Cor'],
+                idade=row['Idade'],
+                vitimas=row['Vítimas']
             )
+            for index, row in df.iterrows()
+        ]
         
+        RegistroIncidente.objects.bulk_create(registros)
+
         self.stdout.write(self.style.SUCCESS('Dados importados com sucesso!'))
