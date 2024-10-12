@@ -19,7 +19,6 @@
         <th>Cor</th>
         <th>Idade</th>
         <th>Vitimas</th>
-
       </tr>
     </thead>
     <tbody>
@@ -32,6 +31,7 @@
         <td>{{ injuria.cor }}</td>
         <td>{{ injuria.idade }}</td>
         <td>{{ injuria.vitimas }}</td>
+        <td><a href="{% url 'deletar_registro' injuria.id %}">Deletar</a></td>
       </tr>
       {% endfor %}
     </tbody>

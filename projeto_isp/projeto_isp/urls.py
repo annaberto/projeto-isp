@@ -1,6 +1,3 @@
-
-# /Users/raphaelaberto/Documents/TI/ISP/projeto-isp/projeto_isp/projeto_isp/urls.py
-
 from django.contrib import admin
 from django.urls import path
 from dados_isp import views
@@ -13,7 +10,6 @@ urlpatterns = [
 
     path('registros/<int:id>/editar/', views.editar_registro, name='editar_registro'),
 
-
-
+    path('registros/deletar/<int:id>/', views.deletar_registro, name='deletar_registro'),
 ]
 

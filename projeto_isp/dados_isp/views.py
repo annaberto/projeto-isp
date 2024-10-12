@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import RegistroIncidente
 from .forms import RegistroIncidenteForm
 
@@ -32,8 +32,10 @@ def editar_registro(request, id):
 
 
 def deletar_registro(request, id):
-    registro = RegistroIncidente.objects.get(id=id)
+    registro = get_object_or_404(RegistroIncidente, id=id)
+
     if request.method == 'POST':
         registro.delete()
-        return redirect('registros')
-    return render(request, 'deletar_registro.html', {'registro': registro})
+        return redirect('registros') 
+
+    return render(request, 'dados_isp/deletar_registro.html', {'registro': registro})
