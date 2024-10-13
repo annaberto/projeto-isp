@@ -2,12 +2,11 @@ from django.db import models
 
 import pandas as pd
 
-file_path = '/Users/raphaelaberto/Documents/TI/projeto-isp/projeto_isp/base_dados/Base_Injuria_Preconceito (2).csv'
+# file_path = 'dados_isp/base_dados/BaseInjuriaPreconceito.csv'
 
+# df = pd.read_csv(file_path, sep=';', encoding='iso-8859-1')
 
-df = pd.read_csv(file_path, sep=';', encoding='iso-8859-1')
-
-print(df.head())
+# print(df.head())
 
 class RegistroIncidente(models.Model):
     cisp = models.IntegerField()
