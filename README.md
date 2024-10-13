@@ -1,6 +1,6 @@
 ## Projeto ISP - Importação de Dados de Incidentes de Preconceito
 
-Este projeto visa importar e normalizar dados de incidentes relacionados a preconceitos de raça ou cor e injúrias por preconceito, disponibilizados em um arquivo CSV, para um banco de dados utilizando **Django** e **pandas**.
+Este projeto tem como objetivo importar, processar e disponibilizar dados de incidentes relacionados a preconceitos de raça ou cor, bem como injúrias por preconceito, a partir de um arquivo CSV. A aplicação é construída utilizando Django como framework web, pandas para manipulação e limpeza de dados, e outras bibliotecas Python para garantir a integridade dos dados e facilitar o processo de importação e visualização.
 
 ### Tecnologias Utilizadas
 
