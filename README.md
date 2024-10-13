@@ -102,4 +102,11 @@ O mapa foi processado e visualizado no QGIS, permitindo uma análise geográfica
 
 ![mapa-cisp-limites-estado](https://github.com/user-attachments/assets/c6ea87d5-f2a6-4376-86f7-1475a5ce053f)
 
+## Authors
+
+<div> 
+  <a href="https://www.linkedin.com/in/annaberto" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
+  <a href = "https://github.com/annaberto"><img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
+  <a href = "mailto:raphaelaberto@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+
 
