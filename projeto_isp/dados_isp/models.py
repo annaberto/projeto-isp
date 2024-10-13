@@ -2,12 +2,6 @@ from django.db import models
 
 import pandas as pd
 
-# file_path = 'dados_isp/base_dados/BaseInjuriaPreconceito.csv'
-
-# df = pd.read_csv(file_path, sep=';', encoding='iso-8859-1')
-
-# print(df.head())
-
 class RegistroIncidente(models.Model):
     cisp = models.IntegerField()
 
@@ -32,6 +26,7 @@ class RegistroIncidente(models.Model):
         ('Negra', 'Negra'),
         ('Parda', 'Parda'),
         ('Amarela', 'Amarela'),
+        ('Indígena', 'Indígena'),
         ('Não informada', 'Não informada')
     ]
     cor = models.CharField(max_length=50, choices=cor_choices)
