@@ -2,7 +2,6 @@
 
 Este projeto visa importar e normalizar dados de incidentes relacionados a preconceitos de raça ou cor e injúrias por preconceito, disponibilizados em um arquivo CSV, para um banco de dados utilizando **Django** e **pandas**.
 
-
 ### Tecnologias Utilizadas
 
 - **Django**: Framework para desenvolvimento web em Python.
@@ -39,7 +38,7 @@ Configuração Inicial
 Clone o repositório para sua máquina local:
 
 ```bash
-git clone <URL do repositório>
+git clone https://github.com/annaberto/projeto-isp.git
 ```
 
 Navegue até o diretório do projeto:
@@ -62,10 +61,12 @@ Para importar os dados do arquivo CSV para o banco de dados, use o comando perso
 ```
 python manage.py import_csv
 ```
-Esse comando irá:
-Importar os dados do CSV para a tabela RegistroIncidente no banco de dados.
-Remover acentos e caracteres especiais dos campos do CSV utilizando unidecode.
-Normalizar os valores dos campos Titulo, Sexo, Cor e Idade para garantir que todos os dados estejam no formato correto.
+Este comando irá:
+
+- Importar os dados do CSV para a tabela RegistroIncidente no banco de dados.
+- Remove acentos e caracteres especiais dos campos do CSV utilizando a biblioteca unidecode.
+- Normaliza os valores dos campos Titulo, Sexo, Cor e Idade para garantir consistência e integridade dos dados.
+
 Testando o Projeto
 Após importar os dados, você pode iniciar o servidor Django localmente para testar a aplicação:
 
@@ -92,3 +93,13 @@ CREATE TABLE "dados_isp_registroincidente" (
     "idade" TEXT NOT NULL,
     "vitimas" INTEGER NOT NULL
 );
+```
+
+## Mapa no QGIS
+Além da construção do banco de dados e da aplicação web, foi criada uma visualização geoespacial utilizando o QGIS. A partir do shapefile disponibilizado no site do ISP, referente às Bases Cartográficas Digitais – Circunscrições Integradas de Segurança Pública (CISP) - Limites de 2019, foi gerado um mapa que ajuda a compreender melhor a distribuição espacial dos incidentes.
+
+O mapa foi processado e visualizado no QGIS, permitindo uma análise geográfica mais aprofundada das Circunscrições Integradas de Segurança Pública. Esta visualização é útil para análises espaciais adicionais e complementa a aplicação web com a funcionalidade de CRUD dos dados.
+
+![mapa-cisp-limites-estado](https://github.com/user-attachments/assets/c6ea87d5-f2a6-4376-86f7-1475a5ce053f)
+
+
