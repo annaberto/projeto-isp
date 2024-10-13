@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados ISP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #2d2add;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .edit {
+      background-color: #7ba728;
+    }
+
+    .edit:hover {
+      background-color: #218838;
+    }
+
+    .delete {
+      background-color: #dc3545;
+    }
+
+    .delete:hover {
+      background-color: #c82333;
+    }
+
+    .action-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .action-links a {
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Registros de Injúria Racial e Preconceito</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Ano</th>
+        <th>Mês</th>
+        <th>Título</th>
+        <th>Sexo</th>
+        <th>Cor</th>
+        <th>Idade</th>
+        <th>Vítimas</th>
+        <th>Alterar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for injuria in injurias %}
+      <tr>
+        <td>{{ injuria.ano }}</td>
+        <td>{{ injuria.mes }}</td>
+        <td>{{ injuria.titulo }}</td>
+        <td>{{ injuria.sexo }}</td>
+        <td>{{ injuria.cor }}</td>
+        <td>{{ injuria.idade }}</td>
+        <td>{{ injuria.vitimas }}</td>
+        <td class="action-links">
+          <a href="{% url 'editar_registro' injuria.id %}" class="edit">Editar</a>
+        </td>
+        <td class="action-links">
+          <a href="{% url 'deletar_registro' injuria.id %}" class="delete">Deletar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+
+</html>

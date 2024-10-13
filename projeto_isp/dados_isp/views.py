@@ -4,7 +4,7 @@ from .forms import RegistroIncidenteForm
 
 def registros(request):
     injurias = RegistroIncidente.objects.all()
-    return render(request, 'dados_isp/listar_injurias.html', {'injurias': injurias})
+    return render(request, 'dados_isp/listar_registros.html', {'injurias': injurias})
 
 
 def criar_registro(request):
